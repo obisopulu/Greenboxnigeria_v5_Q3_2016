@@ -1,0 +1,196 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10.14
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:3306
+-- Generation Time: Sep 07, 2016 at 12:48 PM
+-- Server version: 5.6.30-cll-lve
+-- PHP Version: 5.6.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: gbngrcom_gb_db
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table activities
+--
+
+CREATE TABLE activities (
+  activityID int(6) NOT NULL AUTO_INCREMENT,
+  activityName char(100) DEFAULT NULL,
+  activityPic char(50) DEFAULT NULL,
+  activityInfo varchar(1000) DEFAULT NULL,
+  activityDay int(2) DEFAULT NULL,
+  activityMonth int(2) DEFAULT NULL,
+  activityYear int(2) DEFAULT NULL,
+  activityDate char(10) DEFAULT NULL,
+  dateDay int(2) DEFAULT NULL,
+  dateMonth int(2) DEFAULT NULL,
+  dateYear int(4) DEFAULT NULL,
+  activitySource char(100) NOT NULL,
+  dateUpdated int(8) DEFAULT NULL,
+  PRIMARY KEY (activityID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table anonymous
+--
+
+CREATE TABLE anonymous (
+  anonymousID int(9) NOT NULL AUTO_INCREMENT,
+  anonymousName char(50) DEFAULT NULL,
+  anonymousIP char(100) DEFAULT NULL,
+  anonymousRating int(6) DEFAULT NULL,
+  anonymousDownload int(6) DEFAULT NULL,
+  anonymousRegDate int(8) DEFAULT NULL,
+  PRIMARY KEY (anonymousID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table copy
+--
+
+CREATE TABLE copy (
+  copyID int(9) NOT NULL AUTO_INCREMENT,
+  copyUser char(50) COLLATE utf8_unicode_ci NOT NULL,
+  copySongID int(9) NOT NULL,
+  copySong char(100) COLLATE utf8_unicode_ci NOT NULL,
+  copyDate int(8) NOT NULL,
+  PRIMARY KEY (copyID)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table downloads
+--
+
+CREATE TABLE downloads (
+  downloadID int(20) NOT NULL AUTO_INCREMENT,
+  downloadUser char(50) DEFAULT NULL,
+  downloadSongID int(9) DEFAULT NULL,
+  downloadDate varchar(8) DEFAULT NULL,
+  PRIMARY KEY (downloadID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table feedback
+--
+
+CREATE TABLE feedback (
+  feedID int(6) NOT NULL AUTO_INCREMENT,
+  feedName char(50) DEFAULT NULL,
+  feedTopic char(50) DEFAULT NULL,
+  feedBack varchar(1000) DEFAULT NULL,
+  feedDate char(10) DEFAULT NULL,
+  PRIMARY KEY (feedID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table labels
+--
+
+CREATE TABLE labels (
+  labelID int(6) NOT NULL AUTO_INCREMENT,
+  labelName char(100) DEFAULT NULL,
+  labelPic char(50) DEFAULT NULL,
+  labelOwner char(100) DEFAULT NULL,
+  labelIntro int(4) DEFAULT NULL,
+  labelHistory varchar(1000) DEFAULT NULL,
+  labelArtists varchar(300) DEFAULT NULL,
+  labelProducers varchar(200) DEFAULT NULL,
+  dateDay int(2) DEFAULT NULL,
+  dateMonth int(2) DEFAULT NULL,
+  dateYear int(4) DEFAULT NULL,
+  dateUpdated int(8) DEFAULT NULL,
+  PRIMARY KEY (labelID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table persons
+--
+
+CREATE TABLE persons (
+  personID int(6) NOT NULL AUTO_INCREMENT,
+  personStageName char(50) DEFAULT NULL,
+  personBirthName char(100) DEFAULT NULL,
+  personFanName char(50) DEFAULT NULL,
+  personGenre char(50) DEFAULT NULL,
+  personBirthDay char(5) DEFAULT NULL,
+  personBirthYear int(4) DEFAULT NULL,
+  personPlaceOfOrigin char(100) DEFAULT NULL,
+  personProfession char(50) DEFAULT NULL,
+  personCareerStartYear int(4) DEFAULT NULL,
+  personLabel char(100) DEFAULT NULL,
+  personAssociatedActs char(255) DEFAULT NULL,
+  personLifeStory varchar(50000) DEFAULT NULL,
+  personPic1 char(50) DEFAULT NULL,
+  personPic2 char(50) DEFAULT NULL,
+  personPic3 char(50) DEFAULT NULL,
+  dateDay int(2) DEFAULT NULL,
+  dateMonth int(2) DEFAULT NULL,
+  dateYear int(4) DEFAULT NULL,
+  dateUpdated int(8) DEFAULT NULL,
+  PRIMARY KEY (personID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table plays
+--
+
+CREATE TABLE plays (
+  playID int(50) NOT NULL,
+  playUser char(50) COLLATE utf8_unicode_ci NOT NULL,
+  playSongID int(9) NOT NULL,
+  playSong char(100) COLLATE utf8_unicode_ci NOT NULL,
+  playDate char(8) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table songs
+--
+
+CREATE TABLE songs (
+  songID int(6) NOT NULL AUTO_INCREMENT,
+  songTitle char(50) DEFAULT NULL,
+  songArtist char(50) DEFAULT NULL,
+  songArtistFt char(100) DEFAULT NULL,
+  songAlbum char(50) DEFAULT NULL,
+  songArt char(100) DEFAULT NULL,
+  songProducer char(50) DEFAULT NULL,
+  songBeatmaker char(50) DEFAULT NULL,
+  songLenght int(4) DEFAULT NULL,
+  songType char(15) DEFAULT NULL,
+  songSize int(4) DEFAULT NULL,
+  songURL char(100) DEFAULT NULL,
+  songGenre char(100) DEFAULT NULL,
+  songTags char(100) NOT NULL,
+  songYear int(4) DEFAULT NULL,
+  songLanguage char(100) DEFAULT NULL,
+  songRating int(2) DEFAULT NULL,
+  songDownload int(9) DEFAULT NULL,
+  dateMonth int(2) DEFAULT NULL,
+  dateDay int(2) DEFAULT NULL,
+  dateYear int(4) DEFAULT NULL,
+  dateUpdated int(8) DEFAULT NULL,
+  PRIMARY KEY (songID)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;

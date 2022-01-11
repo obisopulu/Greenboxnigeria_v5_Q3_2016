@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<style type="text/css">
+body{
+	margin:0px;
+	padding:0px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-family:myFirstFont;
+	}
+@font-face{
+	font-family:myFirstFont;
+	src:url(segoe.ttf)
+	}
+@font-face{
+	font-family:mywelcome;
+	src:url(bleach_stains.ttf)
+	}
+@font-face{
+	font-family:mystylish;
+	src:url(pristina.ttf)
+	}
+table, tr, td{
+	border-collapse:collaps
+}
+
+#wall{
+	width:100%;
+	background: url(bg.jpg) no-repeat center;
+	background-size:cover;
+	color:#5C7C69;
+	}
+#wall1{
+	padding:10% 10% 0% 10%;
+	font-size:1.2em;
+	}
+#wall2{
+	padding:0px 10%;
+	font-size:5em;
+	}
+#wall3{
+	padding:0px 10% 10% 10%;
+	font-size:1.5em;
+	}
+
+#dipbig1{ background-color:#5C7C69}
+#dipbig2{ background-color:#5C7C69}
+#dipbig3{ background-color:#5C7C69}
+#dipbig4{ background-color:#5C7C69}
+#dipbig5{ background-color:#5C7C69}
+#dipbig6{ background-color:#5C7C69}
+#dipbig7{ background-color:#5C7C69}
+#dipbig8{ background-color:#5C7C69}
+
+#dippersmall{width:100%}
+#dipsmall1{ background-color:#5C7C69; height:100px}
+#dipsmall2{ background-color:#5C7C69; height:100px}
+#dipsmall3{ background-color:#5C7C69; height:100px}
+#dipsmall4{ background-color:#5C7C69; height:100px}
+#dipsmall5{ background-color:#5C7C69; height:100px}
+#dipsmall6{ background-color:#5C7C69; height:100px}
+#dipsmall7{ background-color:#5C7C69; height:100px}
+#dipsmall8{ background-color:#5C7C69; height:100px}
+
+</style>
+</head>
+<body onresize="myFunction()">
+
+<div id="demo"></div>
+<table id="wall"><tr>
+<td id="wall1">THIS IS</td>
+</tr><tr>
+<td id="wall2">RARITIES DE JOEY</td>
+</tr><tr>
+<td id="wall3">WEB STORE</td>
+</tr></table>
+
+<div id='tilesbig' style='display:none'>
+<table id="dipperbig"><tr>
+<td id="dipbig1">&nbsp;</td>
+<td id="dipbig2">&nbsp;</td>
+<td id="dipbig3">&nbsp;</td>
+<td id="dipbig4">&nbsp;</td></tr><tr>
+<td id="dipbig5">&nbsp;</td>
+<td id="dipbig6">&nbsp;</td>
+<td id="dipbig7">&nbsp;</td>
+<td id="dipbig8">&nbsp;</td>
+</tr></table>
+</div>
+
+<dvi id='tilessmall' style='display:none'>
+<table id="dippersmall"><tr>
+<td id="dipsmall1">&nbsp;</td></tr><tr>
+<td id="dipsmall2">&nbsp;</td></tr><tr>
+<td id="dipsmall3">&nbsp;</td></tr><tr>
+<td id="dipsmall4">&nbsp;</td></tr><tr>
+<td id="dipsmall5">&nbsp;</td></tr><tr>
+<td id="dipsmall6">&nbsp;</td></tr><tr>
+<td id="dipsmall7">&nbsp;</td></tr><tr>
+<td id="dipsmall8">&nbsp;</td></tr><tr>
+</tr></table>
+</div>
+
+<script>
+// JavaScript Document
+	var tilessmall = document.getElementById("tilessmall");
+	var tilesbig = document.getElementById("tilesbig");
+if (window.outerWidth >= 800) {
+		tilesbig.style.display = 'block';
+		tilessmall.style.display = 'none';
+		
+	var w = window.innerWidth;
+	var dip =  w/4 + 'px';
+	document.getElementById("dipperbig").style.height = dip;
+	
+	document.getElementById("dipbig1").style.height = dip;
+	document.getElementById("dipbig1").style.width = dip;
+	
+	document.getElementById("dipbig2").style.height = dip;
+	document.getElementById("dipbig2").style.width = dip;
+	
+	document.getElementById("dipbig3").style.height = dip;
+	document.getElementById("dipbig3").style.width = dip;
+	
+	document.getElementById("dipbig4").style.height = dip;
+	document.getElementById("dipbig4").style.width = dip;
+	
+	document.getElementById("dipbig5").style.height = dip;
+	document.getElementById("dipbig5").style.width = dip;
+	
+	document.getElementById("dipbig6").style.height = dip;
+	document.getElementById("dipbig6").style.width = dip;
+	
+	document.getElementById("dipbig7").style.height = dip;
+	document.getElementById("dipbig7").style.width = dip;
+	
+	document.getElementById("dipbig8").style.height = dip;
+	document.getElementById("dipbig8").style.width = dip;
+
+	}else{
+		tilessmall.style.display = 'block';
+		tilesbig.style.display = 'none';
+	}
+document.getElementById("demo").innerHTML = window.innerWidth;
+
+function myFunction() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+	
+    var txt = "Window size: width=" + w + ", height=" + h;
+    document.getElementById("demo").innerHTML = txt;
+	
+	
+	if (w >= 800) {
+		tilesbig.style.display = 'inline';
+		tilesbig.style.visibility = 'visible';
+		
+		tilessmall.style.visibility = 'hidden';
+		tilessmall.style.display = 'none';
+	}else{
+		tilessmall.style.display = 'inline';
+		tilessmall.style.visibility = 'visible';
+		
+		tilesbig.style.visibility = 'hidden';
+		tilesbig.style.display = 'none';
+	}
+	var dip =  w/4 + 'px';
+	document.getElementById("dipperbig").style.height = dip;
+	
+	document.getElementById("dipbig1").style.height = dip;
+	document.getElementById("dipbig1").style.width = dip;
+	
+	document.getElementById("dipbig2").style.height = dip;
+	document.getElementById("dipbig2").style.width = dip;
+	
+	document.getElementById("dipbig3").style.height = dip;
+	document.getElementById("dipbig3").style.width = dip;
+	
+	document.getElementById("dipbig4").style.height = dip;
+	document.getElementById("dipbig4").style.width = dip;
+	
+	document.getElementById("dipbig5").style.height = dip;
+	document.getElementById("dipbig5").style.width = dip;
+	
+	document.getElementById("dipbig6").style.height = dip;
+	document.getElementById("dipbig6").style.width = dip;
+	
+	document.getElementById("dipbig7").style.height = dip;
+	document.getElementById("dipbig7").style.width = dip;
+	
+	document.getElementById("dipbig8").style.height = dip;
+	document.getElementById("dipbig8").style.width = dip;
+
+/*
+	document.getElementById("dippersmall").style.width = w;
+	
+	document.getElementById("dipsmall1").style.height = '50px';
+	document.getElementById("dipsmall1").style.width = w;
+	
+	document.getElementById("dipsmall2").style.height = '50px';
+	document.getElementById("dipsmall2").style.width = w;
+	
+	document.getElementById("dipsmall3").style.height = '50px';
+	document.getElementById("dipsmall3").style.width = w;
+	
+	document.getElementById("dipsmall4").style.height = '50px';
+	document.getElementById("dipsmall4").style.width = w;
+	
+	document.getElementById("dipsmall5").style.height = '50px';
+	document.getElementById("dipsmall5").style.width = w;
+	
+	document.getElementById("dipsmall6").style.height = '50px';
+	document.getElementById("dipsmall6").style.width = w;
+	
+	document.getElementById("dipsmall7").style.height = '50px';
+	document.getElementById("dipsmall7").style.width = w;
+	
+	document.getElementById("dipsmall8").style.height = '50px';
+	document.getElementById("dipsmall8").style.width = w;
+	*/
+		
+
+}
+</script>
+</body>
+</html>
